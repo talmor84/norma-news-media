@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>
+<title>Norma News Briefing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one reading column; each Story is a headline block above a single 4:5 stage that slides sideways. */
+:root{--bg:#f4f1ec;--surface:#fbf9f5;--ink:#121a19;--muted:#5d6664;--line:#ddd7ca;--brand:#0f3d3d;--on-brand:#f4f1ec;
+--display:"Bricolage Grotesque",Inter,system-ui,sans-serif;--text:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b2021;--surface:#112c2d;--ink:#f4f1ec;--muted:#a9bdb9;--line:#244443;--brand:#f4f1ec;--on-brand:#0f3d3d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b2021;--surface:#112c2d;--ink:#f4f1ec;--muted:#a9bdb9;--line:#244443;--brand:#f4f1ec;--on-brand:#0f3d3d;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--text)}
+.wrap{max-width:560px;margin:0 auto;padding-block:26px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:44px}
+.mast{display:grid;gap:22px}.mast svg{height:30px;width:auto;display:block;overflow:visible}.mast .on-dark{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mast .on-light{display:none}:root:not([data-theme="light"]) .mast .on-dark{display:block}}
+:root[data-theme="dark"] .mast .on-light{display:none}:root[data-theme="dark"] .mast .on-dark{display:block}
+h1{font:800 clamp(34px,8vw,46px)/1 var(--display);letter-spacing:-.02em;margin:0;color:var(--brand)}
+.date{margin:6px 0 0;color:var(--muted)}
+.story{display:grid;gap:14px;scroll-margin-top:16px;padding-top:28px;border-top:3px solid var(--brand)}
+.eyebrow{font:700 11px/1.3 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin:0}
+h2{font:800 clamp(24px,5.6vw,30px)/1.1 var(--display);letter-spacing:-.01em;margin:0;text-wrap:balance}
+.dek{margin:0;color:var(--muted);font-size:17px;line-height:1.5}
+.stage{position:relative;margin-top:6px}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;background:#0f3d3d;outline-offset:4px}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:0 0 100%;width:100%;max-width:100%;aspect-ratio:4/5;height:auto;scroll-snap-align:center;scroll-snap-stop:always;display:block}
+.nav{position:absolute;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:#f4f1ec;color:#0f3d3d;
+font:600 20px/1 var(--text);display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.nav.prev{left:10px}.nav.next{right:10px}.nav:disabled{opacity:0;pointer-events:none}
+.nav:focus-visible,.dot:focus-visible,.track:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.dots{display:flex;gap:2px;flex-wrap:wrap}
+.dot{width:22px;height:22px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .15s,scale .15s}
+.dot[aria-current="true"]::before{background:var(--brand);scale:1.35}
+.count{font:600 13px/1 var(--text);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hint{margin:0;font-size:13px;color:var(--muted)}
+.sources{margin:6px 0 0;padding:0;list-style:none;font-size:14px;line-height:1.45}
+.sources li{padding:9px 0;border-top:1px solid var(--line);color:var(--muted)}
+.sources b{color:var(--ink);font-weight:600;display:block}.sources a{color:var(--brand)}
+footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+</style>
+<div class="wrap"><header class="mast"><span class="on-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278 56" role="img" aria-label="Norma News"><rect x="4" y="5" width="46" height="46" rx="9" ry="9" fill="#0f3d3d"/><svg x="10" y="11" width="34" height="34" viewBox="0 0 32 32"><polygon points="10,5 10,27 24,27" fill="none" stroke="#f4f1ec" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg><text x="66" y="37" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="26" letter-spacing="2.6" fill="#0f3d3d">NORMA</text><text x="196" y="37" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="26" letter-spacing="2.6" fill="#0f3d3d" fill-opacity="0.62">NEWS</text></svg></span><span class="on-dark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278 56" role="img" aria-label="Norma News"><rect x="4" y="5" width="46" height="46" rx="9" ry="9" fill="#f4f1ec"/><svg x="10" y="11" width="34" height="34" viewBox="0 0 32 32"><polygon points="10,5 10,27 24,27" fill="none" stroke="#0f3d3d" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg><text x="66" y="37" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="26" letter-spacing="2.6" fill="#f4f1ec">NORMA</text><text x="196" y="37" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="26" letter-spacing="2.6" fill="#f4f1ec" fill-opacity="0.62">NEWS</text></svg></span><div><h1>Today&rsquo;s Briefing</h1><p class="date">Saturday, November 21, 2026</p></div></header><article class="story" id="story-1"><p class="eyebrow">The courts</p><h2>A jury convicts a former Uber driver of starting the Palisades Fire</h2><p class="dek">On retrial, a federal jury found Jonathan Rinderknecht guilty of two arson charges over the January 2025 fire that killed 12 people.</p><div class="stage"><div class="track" tabindex="0" role="group" aria-label="Slides: A jury convicts a former Uber driver of starting the Palisades Fire"><img src="slides/s1/01.jpg" alt="The courts. A jury convicts a former Uber driver of starting the Palisades Fire. On retrial, a federal jury found Jonathan Rinderknecht guilty of two arson charges over the January 2025 fire that killed 12 people. Photo: Smoke and flames from the Palisades Fire along Palisades Drive (Palisades Fire seen from Palisades Drive, Jan. 7, 2025). Ariam23, CC BY 4.0" width="880" height="1100"><img src="slides/s1/02.jpg" alt="The verdict. A federal jury in Los Angeles found Jonathan Rinderknecht guilty of two arson charges on Friday. He is 30, a former Uber driver. The charges are destruction of property by means of fire, and arson affecting property used in interstate commerce. Federal jury, Two arson charges, Los Angeles" width="880" height="1100" loading=lazy><img src="slides/s1/03.jpg" alt="The fire. The Palisades Fire killed 12 people. The Hill reported 6,837 structures “destroyed”; the BBC says more than 6,800 buildings. Pacific Palisades, Topanga, Malibu" width="880" height="1100" loading=lazy><img src="slides/s1/04.jpg" alt="The charge. Prosecutors said he lit the first fire with a lighter on Jan. 1, 2025. It smoldered underground and reignited. The BBC reported it burned undetected in root systems for six days. Jan. 1: Prosecutors say he lit the Lachman Fire; Jan. 7: The Palisades Fire begins; Jan. 31: The Palisades Fire is fully contained" width="880" height="1100" loading=lazy><img src="slides/s1/05.jpg" alt="A second trial. The first trial ended without a verdict. A new jury heard the case and convicted him. The Hill reported the first jury deadlocked 10-2 in favor of acquittal. The Guardian reported retrial jurors were told not to weigh the fire department&#x27;s response" width="880" height="1100" loading=lazy><img src="slides/s1/06.jpg" alt="The defense. Rinderknecht pleaded not guilty. His lawyers said prosecutors lacked sufficient physical evidence. They also suggested the first blaze was ignited by fireworks. Prosecutors cited his behavior, phone and camera data, and evidence that cast doubt on his account of where he was" width="880" height="1100" loading=lazy><img src="slides/s1/07.jpg" alt="Civil lawsuits. Los Angeles city and county still face civil lawsuits from survivors and victims&#x27; families. Attorney Alex Robertson told the Guardian: “For the purpose of our civil case, the fire could have been started by lightning and would have had the same result.”" width="880" height="1100" loading=lazy><img src="slides/s1/08.jpg" alt="Norma explains. Two separate questions. The verdict is this jury&#x27;s finding on who started the fire, which the first jury could not settle. The Guardian reported that it may not bear much weight on the civil lawsuits; attorney Alex Robertson said the civil case turns on what happened after the fire started, not what started it" width="880" height="1100" loading=lazy><img src="slides/s1/09.jpg" alt="What we don&#x27;t know yet. The sentence. It is set for March 17. The Guardian reports five to 40 years; the BBC reports five to 20 years on each charge. Whether he will appeal. His lawyers said they were disappointed but respected the jury&#x27;s decision, the BBC reported" width="880" height="1100" loading=lazy><img src="slides/s1/10.jpg" alt="Sources: The Hill, California man found guilty of sparking blaze that became deadly Palisades Fire; The Guardian, Man accused of sparking deadly Los Angeles wildfire found guilty; BBC News, Man convicted of starting Palisades fire in Los Angeles" width="880" height="1100" loading=lazy></div><button class="nav prev" type="button" aria-label="Previous slide">&#8592;</button><button class="nav next" type="button" aria-label="Next slide">&#8594;</button></div><div class="bar"><div class="dots"><button class="dot" type="button" aria-label="Slide 1 of 10"></button><button class="dot" type="button" aria-label="Slide 2 of 10"></button><button class="dot" type="button" aria-label="Slide 3 of 10"></button><button class="dot" type="button" aria-label="Slide 4 of 10"></button><button class="dot" type="button" aria-label="Slide 5 of 10"></button><button class="dot" type="button" aria-label="Slide 6 of 10"></button><button class="dot" type="button" aria-label="Slide 7 of 10"></button><button class="dot" type="button" aria-label="Slide 8 of 10"></button><button class="dot" type="button" aria-label="Slide 9 of 10"></button><button class="dot" type="button" aria-label="Slide 10 of 10"></button></div><span class="count">1 / 10</span></div><p class="hint">Swipe, use the arrows, or click either half of a slide.</p><ul class="sources"><li><b>The Hill</b><a href="https://thehill.com/homenews/state-watch/6234829-uber-driver-palisades-fire-conviction/">California man found guilty of sparking blaze that became deadly Palisades Fire</a></li><li><b>The Guardian</b><a href="https://www.theguardian.com/us-news/2026/nov/20/los-angeles-palisades-wildfire-trial-verdict">Man accused of sparking deadly Los Angeles wildfire found guilty</a></li><li><b>BBC News</b><a href="https://www.bbc.co.uk/news/articles/c64gn0gy8rj3o">Man convicted of starting Palisades fire in Los Angeles</a></li></ul></article><footer>Norma News. Reported facts, attributed claims and Norma&rsquo;s analysis are kept apart and labelled. </footer></div>
+<script>
+document.querySelectorAll('.story').forEach(function (story) {
+  var track = story.querySelector('.track'), n = track.children.length;
+  var prev = story.querySelector('.prev'), next = story.querySelector('.next');
+  var dots = story.querySelectorAll('.dot'), count = story.querySelector('.count');
+  var i = 0, timer, settle;
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function clamp(k) { return Math.max(0, Math.min(n - 1, k)); }
+  function at() { return clamp(Math.round(track.scrollLeft / track.clientWidth)); }
+  function paint() {
+    prev.disabled = i === 0; next.disabled = i === n - 1;
+    count.textContent = (i + 1) + ' / ' + n;
+    dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+  }
+  function go(k, instant) {
+    i = clamp(k);
+    var left = i * track.clientWidth;
+    track.scrollTo({ left: left, behavior: instant || still ? 'instant' : 'smooth' });
+    // Some embedded views never run the smooth scroll; land the slide anyway.
+    clearTimeout(settle);
+    settle = setTimeout(function () {
+      if (Math.abs(track.scrollLeft - left) > 2) track.scrollTo({ left: left, behavior: 'instant' });
+    }, 450);
+    paint();
+  }
+  prev.addEventListener('click', function () { go(i - 1); });
+  next.addEventListener('click', function () { go(i + 1); });
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
+  track.addEventListener('scroll', function () {
+    clearTimeout(timer); timer = setTimeout(function () { i = at(); paint(); }, 600);
+  }, { passive: true });
+  track.addEventListener('keydown', function (ev) {
+    if (ev.key === 'ArrowRight') { ev.preventDefault(); go(i + 1); }
+    if (ev.key === 'ArrowLeft') { ev.preventDefault(); go(i - 1); }
+  });
+  track.addEventListener('click', function (ev) {
+    var r = track.getBoundingClientRect();
+    go(i + (ev.clientX - r.left > r.width / 2 ? 1 : -1));
+  });
+  window.addEventListener('resize', function () { go(i, true); });
+  paint();
+});
+function showHash() { var t = location.hash && document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+window.addEventListener('hashchange', showHash); showHash();
+</script>
+</body></html>
